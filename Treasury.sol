@@ -41,7 +41,6 @@ contract Callisto_treasury
     
     function() payable
     {
-        assert(msg.value > 0);
         deposited(msg.sender, msg.value);
     }
     
