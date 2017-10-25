@@ -84,6 +84,7 @@ contract Callisto_treasury
     function withdraw_deposit(uint256 _amount) external
     {
         assert(_amount >= voters[msg.sender].balance);
+        assert(voters[msg.sender].allowed_withdrawal_time >= now);
         msg.sender.transfer(_amount);
         extracted(msg.sender, _amount);
     }
