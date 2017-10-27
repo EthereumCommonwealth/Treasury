@@ -7,6 +7,8 @@ contract Callisto_treasury
     event VoterWeight(address indexed _owner, uint256 _amount);
     event ProposalCreated(bytes32 indexed _signature);
     
+    enum Mode { inactive, active, currently_voted, rejected }
+    
     struct proposal
     {
         bool    voting;             // is the proposal currently in voting statge or not.
